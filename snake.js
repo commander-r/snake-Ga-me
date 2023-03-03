@@ -1,3 +1,5 @@
+// added better spacing in the code
+
 const GAME_SPEED = 50;
 const CANVAS_BORDER_COLOUR = 'black';
 const CANVAS_BACKGROUND_COLOUR = "lightgreen";
@@ -96,86 +98,86 @@ const DOWN_KEY = 40;
 
 // Prevent the snake from reversing
 document.addEventListener("keydown", function(event) {
-if (event.keyCode === LEFT_KEY && dx !== 10) {
-dx = -10;
-dy = 0;
-} else if (event.keyCode === UP_KEY && dy !== 10) {
-dx = 0;
-dy = -10;
-} else if (event.keyCode === RIGHT_KEY && dx !== -10) {
-dx = 10;
-dy = 0;
-} else if (event.keyCode === DOWN_KEY && dy !== -10) {
-dx = 0;
-dy = 10;
-}
+  if (event.keyCode  === LEFT_KEY && dx !== 10) {
+    dx = -10;
+    dy = 0;
+    } else if (event.keyCode === UP_KEY && dy !== 10) {
+    dx = 0;
+    dy = -10;
+    } else if (event.keyCode === RIGHT_KEY && dx !== -10) {
+    dx = 10;
+    dy = 0;
+    } else if (event.keyCode === DOWN_KEY && dy !== -10) {
+    dx = 0;
+    dy = 10;
+  }
 });
 
 // Main game function
 function main() {
-// Clear the canvas
-ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
-ctx.strokeStyle = CANVAS_BORDER_COLOUR;
+  // Clear the canvas
+  ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
+  ctx.strokeStyle = CANVAS_BORDER_COLOUR;
 
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-ctx.strokeRect(0, 0, canvas.width, canvas.height);
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-// Move the snake
-moveSnake();
+  // Move the snake
+  moveSnake();
 
-// Check if the snake has collided with the wall or itself
-if (hasGameEnded()){
-gameOver() 
-return;
-}
+  // Check if the snake has collided with the wall or itself
+  if (hasGameEnded()){
+  gameOver() 
+  return;
+  }
 
-// Check if the snake has eaten food
-if (snake[0].x === food.x && snake[0].y === food.y) {
-score += 10;
-createFood();
-}
+  // Check if the snake has eaten food
+  if (snake[0].x === food.x && snake[0].y === food.y) {
+  score += 10;
+  createFood();
+  }
 
-// Draw the snake and the food
-drawSnake();
-drawFood();
+  // Draw the snake and the food
+  drawSnake();
+  drawFood();
 
-// Draw the score
-drawScore();
+  // Draw the score
+  drawScore();
 
-// Call the main function again
-setTimeout(main, GAME_SPEED);
+  // Call the main function again
+  setTimeout(main, GAME_SPEED);
 }
 
 // Check if the game has ended
 function hasGameEnded() {
-for (let i = 4; i < snake.length; i++) {
-if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
-return true;
-}
-}
+  for (let i = 4; i < snake.length; i++) {
+  if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+  return true;
+  }
+  }
 
-const hitLeftWall = snake[0].x < 0;
-const hitRightWall = snake[0].x > canvas.width - 10;
-const hitTopWall = snake[0].y < 0;
-const hitBottomWall = snake[0].y > canvas.height - 10;
+  const hitLeftWall = snake[0].x < 0;
+  const hitRightWall = snake[0].x > canvas.width - 10;
+  const hitTopWall = snake[0].y < 0;
+  const hitBottomWall = snake[0].y > canvas.height - 10;
 
-return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
+  return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
 }
 
 // Draw the food
 function drawFood() {
-ctx.fillStyle = FOOD_COLOUR;
-ctx.strokeStyle = FOOD_BORDER_COLOUR;
+  ctx.fillStyle = FOOD_COLOUR;
+  ctx.strokeStyle = FOOD_BORDER_COLOUR;
 
-ctx.fillRect(food.x, food.y, 10, 10);
-ctx.strokeRect(food.x, food.y, 10, 10);
+  ctx.fillRect(food.x, food.y, 10, 10);
+  ctx.strokeRect(food.x, food.y, 10, 10);
 }
 
 // Draw the score
 function drawScore() {
-ctx.fillStyle = "black";
-ctx.font = "20px Arial";
-ctx.fillText("Score: " + score, canvas.width - 100, 30);
+  ctx.fillStyle = "black";
+  ctx.font = "20px Arial";
+  ctx.fillText("Score: " + score, canvas.width - 100, 30);
 }
 
 function gameOver() {

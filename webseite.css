@@ -1,4 +1,5 @@
-*{
+/* added better spacing to make the code more readable */
+* {
 	margin:0%;
 	padding:0%;
 	box-sizing: border-box;
@@ -10,9 +11,9 @@ body {
 	min-height: 100vh;
 	background: linear-gradient(
 		rgb(0, 79, 0),
-    	rgb(255, 255, 255));
+    	rgb(255, 255, 255)
+	);
 }
-		
 
 header {
 	position:absolute;
@@ -24,6 +25,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 }
+
 header .Snake {
 	color:black;
 	font-weight: 600;
@@ -32,16 +34,19 @@ header .Snake {
 	text-transform:uppercase;
 	letter-spacing: 4px;
 }
+
 header ul {
 	display: flex;
 	justify-content: space-between;
 	align-items:center;
 	
 }
+
 header ul li {
 	list-style:none;
 	margin-left: 20px;
 }
+
 header ul li a {
 	color:black;
 	text-decoration: none;
@@ -51,13 +56,14 @@ header ul li a {
 	font-size: Achivo;
 	
 }
+
 header ul li a:hover,
-header ul li a.live
-{
+header ul li a.live {
 	background:black;
 	color: rgb(255, 255, 255);
 	
 }
+
 .Buttons {
 	width:100%;
 	position:absolute;
@@ -67,7 +73,8 @@ header ul li a.live
 	color:rgb(0, 0, 0);
 	
 }
-button{
+
+button {
 	width:200px;
 	padding:15px;
 	text-align: center;
@@ -81,35 +88,42 @@ button{
 	cursor: pointer;
 	position:relative;
 	overflow:hidden;
-	
-	
 }
-span{
+
+span {
 	background:rgb(40, 120, 0);
 	height: 100%;
 	width: 0;
-	border-radius: 25xp;
+	border-radius: 25px;
 	position:absolute;
 	left:0;
 	bottom:0%;
 	z-index: -1;
 	transition:0.5s;
 }
+
 button:hover span {
 	width:100%;
 	
 }
+
 h2{
-	
 	padding: 30px 100px;
 	margin-bottom: 20px;
 	font-size: 25pt;
 }
-section img {
-	
+
+/* i made the image the background image of the section and also made it reletive and placed it behind everything so it's on the background */
+section {
+	background-image: url(Schlangenflusterer.png);
 	position: absolute;
     bottom: 0;
     right: 0;
-    width:800;
-    height:600;
+	z-index: -1;
+
+	height: 60%;
+	width: 50%;
+	background-size:contain;
+	background-position: center;
+	background-repeat: no-repeat;
 }

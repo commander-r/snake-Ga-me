@@ -1,3 +1,5 @@
+/* added spacing to read the CSS code better */
+
 *{
 	margin:0%;
 	padding:0%;
@@ -5,14 +7,15 @@
 	font-family: sans serif ;
 
 }
+
 body {
 	margin:0%;
 	min-height: 100vh;
 	background: linear-gradient(
 		rgb(0, 79, 0),
-    	rgb(255, 255, 255));
-}
-		
+    	rgb(255, 255, 255)
+	);
+}	
 
 header {
 	position:absolute;
@@ -24,6 +27,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 }
+
 header .Snake {
 	color:black;
 	font-weight: 600;
@@ -32,16 +36,19 @@ header .Snake {
 	text-transform:uppercase;
 	letter-spacing: 4px;
 }
+
 header ul {
 	display: flex;
 	justify-content: space-between;
 	align-items:center;
 	
 }
+
 header ul li {
 	list-style:none;
 	margin-left: 20px;
 }
+
 header ul li a {
 	color:black;
 	text-decoration: none;
@@ -51,13 +58,14 @@ header ul li a {
 	font-size: Achivo;
 	
 }
+
 header ul li a:hover,
-header ul li a.active
-{
+header ul li a.active {
 	background:black;
 	color: rgb(255, 255, 255);
 	
 }
+
 main { 
 	padding-top: 200;
 	padding-left: 0;
@@ -67,14 +75,22 @@ main {
     display: block;
     width: 800px;
 }
+
 #mein-canvas {
 	background-color: grey;
 }
-section img {
-	
+
+/* i made the image the background image of the section and also made it reletive and placed it behind everything so it's on the background */
+section {
+	background-image: url(Schlangenflusterer.png);
 	position: absolute;
     bottom: 0;
     right: 0;
-    width:800;
-    height:600;
+	z-index: -1;
+
+	height: 60%;
+	width: 50%;
+	background-size:contain;
+	background-position: center;
+	background-repeat: no-repeat;
 }
